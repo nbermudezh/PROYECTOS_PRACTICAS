@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+    <header>
+        <a href="{{ url_for('inicio') }}" class="header-link">
+            <h1>Universidad de La Salle</h1>
+            <p>Sistema de Extracción de Contratos</p>
+        </a>
+    </header>
+
+
+
+    <div class="contenedor-inicio">
+        <h2>Bienvenido</h2>
+
+        <div class="opciones-contrato">
+            <a href="{{ url_for('formulario') }}" class="btn-seleccion">
+                Formulario Contrato Regular
+            </a>
+
+            <a href="{{ url_for('minCuantia') }}" class="btn-seleccion">
+                Formulario Contrato Mínima Cuantía
+            </a>
+        </div>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2026 U. La Salle</p>
+    </footer>
+
+</body>
+
+</html>

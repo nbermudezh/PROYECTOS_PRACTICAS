@@ -1,0 +1,254 @@
+body {
+  font-family: "Segoe UI", Roboto, sans-serif;
+  background: linear-gradient(180deg, #003366 15%, #ffffff 100%);
+  color: #222;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 5px 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+  margin: 5px 0;
+  font-size: 1.8em;
+}
+
+header p {
+  font-size: 1.1em;
+  color: #fdd835;
+  margin: 0;
+}
+
+form,
+.content-box,
+.contenedor-inicio {
+  background-color: #ffffffe1;
+  border: 1px solid #646363;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  padding: 35px 45px;
+  max-width: 650px;
+  width: 65%;
+  margin-top: 40px;
+}
+
+h2,
+h3 {
+  text-align: center;
+  color: #003366;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #b00020;
+}
+
+label {
+  font-weight: 600;
+  color: #003366;
+}
+
+input[type="text"],
+input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="file"]:focus {
+  border-color: #b00020;
+  box-shadow: 0 0 6px rgba(176, 0, 32, 0.3);
+  outline: none;
+}
+
+button {
+  background-color: #003366;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0, 51, 102, 0.3);
+}
+
+button:hover {
+  background-color: #b00020;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(176, 0, 32, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  margin-bottom: 8px;
+  font-size: 15px;
+}
+
+ol {
+  padding-left: 25px;
+}
+
+ol li {
+  margin-bottom: 8px;
+}
+
+a {
+  color: #003366;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 20px;
+  display: block;
+  text-align: center;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #b00020;
+}
+
+footer {
+  background-color: #003366;
+  color: white;
+  text-align: center;
+  width: 100%;
+  padding: 5px 0;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  margin-top: auto;
+}
+
+/* ============================= */
+/* PANTALLA DE INICIO */
+/* ============================= */
+
+.opciones-contrato {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.btn-seleccion {
+  background: linear-gradient(135deg, #003366, #004080);
+  color: #ffffff !important;
+  padding: 22px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 0.6px;
+  text-align: center;
+  transition: all 0.35s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 6px 20px rgba(0, 51, 102, 0.25);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto brillo sutil */
+.btn-seleccion::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0.1) 100%);
+  transition: all 0.6s ease;
+}
+
+.btn-seleccion:hover::before {
+  left: 100%;
+}
+
+.btn-seleccion:hover {
+  background: #fdd835;
+  color: #003366 !important;
+  border: 2px solid #003366;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-seleccion:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================= */
+/* RESPONSIVIDAD BÁSICA */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+  form,
+  .content-box,
+  .contenedor-inicio {
+    width: 90%;
+    padding: 25px;
+  }
+
+  .btn-seleccion {
+    font-size: 16px;
+    padding: 18px;
+  }
+}
+
+
+
+
+.header-link {
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+
+.header-link,
+.header-link:visited,
+.header-link:hover,
+.header-link:active {
+  color: inherit;
+}
+
+
+.lista-obligaciones {
+  padding-left: 22px;
+  margin-top: 8px;
+}
+
+.lista-obligaciones li {
+  margin-bottom: 6px;
+  text-align: justify;
+}

@@ -1,0 +1,4 @@
+flask
+pdfplumber
+spacy
+docxtpl

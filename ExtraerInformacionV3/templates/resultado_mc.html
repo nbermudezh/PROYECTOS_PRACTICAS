@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Resultado de Extracción</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+<header>
+        <a href="{{ url_for('inicio') }}" class="header-link">
+            <h1>Universidad de La Salle</h1>
+            <p>Resultado de Extracción de Contrato</p>
+        </a>
+    </header>
+
+
+  <div class="content-box">
+    <h2>Información extraída del contrato</h2>
+
+    <ul>
+      <li><strong>Contratista:</strong> {{ datos["Contratista Nombre"] }}</li>
+      <li><strong>Cédula:</strong> {{ datos["Contratista Cédula"] }}</li>
+      <li><strong>Fecha de inicio:</strong> {{ datos["Fecha inicio"] }}</li>
+      <li><strong>Fecha de fin:</strong> {{ datos["Fecha fin"] }}</li>
+      <li><strong>Valor:</strong> {{ datos["Valor"] }}</li>
+    </ul>
+
+    <h3>CLÁUSULA PRIMERA. OBJETO</h3>
+    <p>{{ datos["CLÁUSULA PRIMERA. OBJETO"] }}</p>
+
+    <h3>CLÁUSULA QUINTA. OBLIGACIONES DEL PROVEEDOR</h3>
+    {% if datos["Intro Cláusula Quinta"] %}
+      <p>{{ datos["Intro Cláusula Quinta"] }}</p>
+    {% endif %}
+    <ol style="padding-left: 20px;">
+      {% for f in datos["Cláusula Quinta - Obligaciones"] %}
+        <li style="margin-bottom: 6px; text-align: justify;">
+          {{ f }}
+        </li>
+      {% endfor %}
+    </ol>
+
+    <form action="/descargar_word_mc" method="POST">
+      <input type="hidden" name="consecutivo" value="{{ request.form.get('consecutivo', '') }}">
+      <input type="hidden" name="dia" value="{{ request.form.get('dia', '') }}">
+      <input type="hidden" name="mes" value="{{ request.form.get('mes', '') }}">
+      
+      {% for k, v in datos.items() %}
+        {% if v is iterable and not v|string %}
+          {% for item in v %}
+            <input type="hidden" name="{{ k }}" value="{{ item }}">
+          {% endfor %}
+        {% else %}
+          <input type="hidden" name="{{ k }}" value="{{ v }}">
+        {% endif %}
+      {% endfor %}
+
+      <button type="submit">Descargar en Word</button>
+    </form>
+
+    <a href="/">Volver</a>
+  </div>
+
+  <footer>
+        <p>&copy; 2026 U. La Salle - Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

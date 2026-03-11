@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Extractor de Información de Contratos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+
+  <header>
+    <a href="{{ url_for('inicio') }}" class="header-link">
+      <h1>Universidad de La Salle</h1>
+      <p>Extractor de Información de Contratos - Contrato Regular</p>
+    </a>
+  </header>
+
+  <form action="/extraer_contrato" method="post" enctype="multipart/form-data">
+    <h2>Subir contrato PDF</h2>
+
+    <label for="consecutivo">Consecutivo:</label>
+    <input type="text" id="consecutivo" name="consecutivo" placeholder="Ingresar número consecutivo">
+
+    <label for="dia">Día:</label>
+    <input type="text" id="dia" name="dia" placeholder="Ingresar el día">
+
+    <label for="mes">Mes:</label>
+    <input type="text" id="mes" name="mes" placeholder="Ingresar el mes">
+
+    <label>Contrato:</label>
+    <input type="file" name="contrato" accept=".pdf" required>
+
+    <label>OtroSí (opcional):</label>
+    <input type="file" name="otrosi" accept=".pdf">
+
+    <button type="submit">PROCESAR</button>
+  </form>
+
+  <footer>
+    <p>&copy; 2026 U. La Salle - Todos los derechos reservados.</p>
+  </footer>
+
+</body>
+</html>
